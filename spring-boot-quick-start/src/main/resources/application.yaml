@@ -1,0 +1,13 @@
+person:
+  name: ldd
+  age: 18
+  happy: true
+  birth: 2023/4/13
+  maps: {k1: v1, k2: v2, k3: v3}
+  lists:
+    - sing
+    - play
+    - music
+  db-properties:
+    username: root
+    password: 123456
