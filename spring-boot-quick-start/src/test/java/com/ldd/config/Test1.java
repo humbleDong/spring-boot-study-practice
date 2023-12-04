@@ -19,6 +19,7 @@ public class Test1 {
     @Autowired
     private Person person;
 
+
     @Test
     public  void test(){
         System.out.println(dbProperties);
@@ -29,4 +30,5 @@ public class Test1 {
     public  void testPerson(){
         System.out.println(person);
     }
+
 }

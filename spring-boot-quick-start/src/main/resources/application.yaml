@@ -1,5 +1,6 @@
 person:
-  name: ldd
+  #${random.value}和${random.uuid}生成的是32位MD5字符串
+  name: ldd 随机uuid:${random.uuid},随机value:${random.value},随机int:${random.int(1,10)}
   age: 18
   happy: true
   birth: 2023/4/13
@@ -11,3 +12,30 @@ person:
   db-properties:
     username: root
     password: 123456
+
+
+spring:
+  config:
+    import:
+      - optional:classpath:/config/app.yml
+  application:
+    name: "dev"
+  profiles:
+    active: dev
+    default: dev
+
+---
+spring:
+  application:
+    name: "dev-cloud"
+  config:
+    activate:
+      on-cloud-platform: "kubernetes"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "dev | test"
+
+
