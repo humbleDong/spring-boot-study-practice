@@ -20,7 +20,6 @@
         <module>spring-boot-properties</module>
         <module>spring-boot-mail</module>
         <module>ldd-spring-boot-starter</module>
-        <module>ldd-spring-boot-starter-sample</module>
     </modules>
 
 
