@@ -17,8 +17,9 @@
     <description> this is a spring-boot-study-practice</description>
 
     <modules>
-        <module>spring-boot-mail</module>
         <module>spring-boot-properties</module>
+        <module>spring-boot-mail</module>
+        <module>ldd-spring-boot-starter</module>
     </modules>
 
 
