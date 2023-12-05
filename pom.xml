@@ -8,17 +8,17 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>com.ldd</groupId>
     <artifactId>spring-boot-study-practice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-study-practice</name>
-    <description>spring-boot-study-practice</description>
+    <description> this is a spring-boot-study-practice</description>
 
     <modules>
-        <module>spring-boot-quick-start</module>
+        <module>spring-boot-mail</module>
+        <module>spring-boot-properties</module>
     </modules>
 
 
@@ -49,6 +49,11 @@
             <version>${slf4j.version}</version>
         </dependency>
 
+        <!--web-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
 
         <dependency>

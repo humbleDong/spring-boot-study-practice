@@ -14,28 +14,27 @@ person:
     password: 123456
 
 
-spring:
-  config:
-    import:
-      - optional:classpath:/config/app.yml
-  application:
-    name: "dev"
-  profiles:
-    active: dev
-    default: dev
+#spring:
+#  config:
+#    import:
+#      - optional:classpath:/config/app.yml
+#  application:
+#    name: "dev"
+#  profiles:
+#    active: dev
 
+#
 ---
-spring:
-  application:
-    name: "dev-cloud"
-  config:
-    activate:
-      on-cloud-platform: "kubernetes"
-
----
-spring:
-  config:
-    activate:
-      on-profile: "dev | test"
-
+#spring:
+#  application:
+#    name: "dev-cloud"
+#  config:
+#    activate:
+#      on-cloud-platform: "kubernetes"
+#
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: "dev | test"
 
