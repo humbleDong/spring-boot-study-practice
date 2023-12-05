@@ -1,6 +1,6 @@
-package com.ldd.config;
+package com.ldd.spring.boot.starter.config;
 
-import com.ldd.service.TestService;
+import com.ldd.spring.boot.starter.service.TestService;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;

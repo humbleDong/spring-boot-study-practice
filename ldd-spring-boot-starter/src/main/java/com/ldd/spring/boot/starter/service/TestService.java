@@ -1,4 +1,4 @@
-package com.ldd.service;
+package com.ldd.spring.boot.starter.service;
 
 /**
  * @Author ldd
