@@ -21,7 +21,6 @@
         <module>spring-boot-mail</module>
         <module>ldd-spring-boot-starter</module>
         <module>ldd-spring-boot-starter-sample</module>
-        <module>spring-boot-fail</module>
     </modules>
 
 
