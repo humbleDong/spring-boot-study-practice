@@ -7,9 +7,6 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 @SpringBootApplication
 @ConfigurationPropertiesScan("com.ldd")
 public class SpringBootMailApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(SpringBootMailApplication.class, args);
+    public static void main(String[] args) {SpringApplication.run(SpringBootMailApplication.class, args);
     }
-
 }
