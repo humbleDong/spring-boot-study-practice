@@ -8,6 +8,4 @@
 - #### ldd-spring-boot-starter-sample   测试自定义的启动器
 - #### spring-boot-fail                 自定义失败分析器和自定义事件监听器
 - #### spring-boot-logging              日志管理
-- 
-
-- 
+- #### spring-boot-web                  Web相关的核心应用

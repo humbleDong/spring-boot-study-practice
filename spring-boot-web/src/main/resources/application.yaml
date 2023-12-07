@@ -1,0 +1,16 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      persistent: true
+      store-dir: /tmp/session-store
+      tracking-modes:
+        - cookie
+        - url
+  shutdown: graceful
+
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+  mvc:
+    static-path-pattern: "/pub/**"
