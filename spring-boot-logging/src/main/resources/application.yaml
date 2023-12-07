@@ -1,0 +1,15 @@
+logging:
+# file:
+#    name: spring-boot-logging/logs/ldd.log
+  level:
+    root: info
+    org.springframework: warn
+    tomcat: error
+  group:
+    tomcat: org.apache.catalina,org.apache.coyote,org.apache.tomcat
+  register-shutdown-hook: false
+
+spring:
+  output:
+    ansi:
+      enabled: always
