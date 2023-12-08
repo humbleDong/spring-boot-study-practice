@@ -9,3 +9,4 @@
 - #### spring-boot-fail                 自定义失败分析器和自定义事件监听器
 - #### spring-boot-logging              日志管理
 - #### spring-boot-web                  Web相关的核心应用
+- #### spring-boot-datasource           关于数据源的学习(切换Druid连接池)
