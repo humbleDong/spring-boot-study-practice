@@ -8,13 +8,18 @@ import com.ldd.handler.StringWithoutSpaceDeserializer;
 import com.ldd.interceptor.LoginInterceptor;
 import com.ldd.servlet.RegisterServlet;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+
+import java.util.Locale;
 
 /**
  * @Author ldd
@@ -23,6 +28,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 @RequiredArgsConstructor
+@Slf4j
 public class WebConfig implements WebMvcConfigurer {
     private final LoginInterceptor loginInterceptor;
 
@@ -89,5 +95,47 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/dist/**").addResourceLocations("classpath:/dist/");
 
     }
+
+    /**
+     * Locale 默认设置为英文
+     * @return LocaleResolver
+     */
+    @Bean
+    public LocaleResolver localeResolver(){
+        SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
+        sessionLocaleResolver.setDefaultLocale(Locale.US);
+        return sessionLocaleResolver;
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(localeChangeInterceptor());
+    }
+
+    /**
+     * 切换语言拦截器，通过url?lang=zh_CN形式进行切换
+     * @return
+     */
+    private LocaleChangeInterceptor localeChangeInterceptor(){
+        LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
+        localeChangeInterceptor.setParamName("lang");
+        return localeChangeInterceptor;
+    }
+
+
+    /**
+     * 全局跨域
+     * @param registry
+     */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/user/**")
+                .allowedMethods("GET", "POST")
+                .allowedOrigins("https://gh.qisui.xyz")
+                .allowedHeaders("header1", "header2", "header3")
+                .exposedHeaders("header1", "header2")
+                .allowCredentials(true).maxAge(3600);
+    }
+
 }
 

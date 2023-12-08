@@ -5,10 +5,13 @@ import com.ldd.po.User;
 import com.ldd.po.UserXml;
 import jakarta.validation.constraints.Size;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomUtils;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,9 +22,13 @@ import java.util.List;
  * @Date 2023/12/7
  * json和XML数据测试
  */
-@RestController
+@Controller
 @Slf4j
+@Validated
 public class ResponseBodyController {
+
+    @CrossOrigin
+    @ResponseBody
     @GetMapping(value = "/user/json/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public User getJsonUserInfo(@PathVariable("userId") @Size(min = 5, max = 8) String userId) {
         User user = new User("大大怪", 18);
@@ -30,6 +37,14 @@ public class ResponseBodyController {
         return user;
     }
 
+    @ResponseBody
+    @PostMapping
+    public ResponseEntity saveUser(@RequestBody @Validated User user){
+        user.setId(RandomUtils.nextLong());
+        return new ResponseEntity(user, HttpStatus.OK);
+    }
+
+    @ResponseBody
     @GetMapping(value = "/user/xml/{userId}", produces = MediaType.APPLICATION_XML_VALUE)
     public UserXml getXmlUserInfo(@PathVariable("userId") String userId) {
         UserXml user = new UserXml();
@@ -46,5 +61,10 @@ public class ResponseBodyController {
         user.setOrderList(orderList);
 
         return user;
+    }
+
+    @GetMapping(value = "/index")
+    public String index(){
+        return "index";
     }
 }
