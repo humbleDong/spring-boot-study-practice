@@ -30,6 +30,9 @@ spring:
       wall:
         config:
           multi-statement-allow: true
+  jdbc:
+    template:
+      max-rows: 3
 #  sql:
 #    init:
 #      mode: always

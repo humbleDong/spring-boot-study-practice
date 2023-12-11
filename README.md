@@ -10,3 +10,6 @@
 - #### spring-boot-logging              日志管理
 - #### spring-boot-web                  Web相关的核心应用
 - #### spring-boot-datasource           关于数据源的学习(切换Druid连接池)
+- #### spring-boot-jpa                  集成JPA
+- #### spring-boot-mybatis              集成MyBatis
+- #### spring-boot-mybatis-plus         集成MyBatis-Plus
