@@ -13,3 +13,5 @@
 - #### spring-boot-jpa                  集成JPA
 - #### spring-boot-mybatis              集成MyBatis
 - #### spring-boot-mybatis-plus         集成MyBatis-Plus
+- #### spring-boot-task                 spring计划任务
+- #### spring-boot-quartz               quartz计划任务
