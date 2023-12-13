@@ -15,3 +15,5 @@
 - #### spring-boot-mybatis-plus         集成MyBatis-Plus
 - #### spring-boot-task                 spring计划任务
 - #### spring-boot-quartz               quartz计划任务
+- #### spring-boot-war                  将一个应用打成war包
+- #### spring-boot-test                 单元测试的案列
