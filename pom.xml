@@ -31,6 +31,7 @@
         <module>spring-boot-task</module>
         <module>spring-boot-quartz</module>
         <module>spring-boot-war</module>
+        <module>spring-boot-test</module>
     </modules>
 
 
@@ -68,26 +69,28 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
 
         <!--测试Spring计划任务的时候需要注掉这两个pom(jdbc和mysql驱动)依赖-->
         <!--jdbc-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jdbc</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-jdbc</artifactId>-->
+<!--        </dependency>-->
 
-        <!--mysql-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.version}</version>
-        </dependency>
+<!--        &lt;!&ndash;mysql&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--            <version>${mysql.version}</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -95,6 +98,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+<!--                <configuration>-->
+<!--                    <jvmArguments>-->
+<!--                        -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005-->
+<!--                    </jvmArguments>-->
+<!--                </configuration>-->
+<!--                <configuration>-->
+<!--                    <excludeDevtools>false</excludeDevtools>-->
+<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>
