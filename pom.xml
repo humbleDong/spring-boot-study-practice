@@ -32,6 +32,9 @@
         <module>spring-boot-quartz</module>
         <module>spring-boot-war</module>
         <module>spring-boot-test</module>
+        <module>spring-boot-actuator</module>
+        <module>spring-boot-admin-server</module>
+        <module>spring-boot-admin-client</module>
     </modules>
 
 
@@ -74,6 +77,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
 

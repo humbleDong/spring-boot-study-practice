@@ -8,15 +8,19 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-
-    <artifactId>spring-boot-properties</artifactId>
+    <properties>
+        <spring-boot-admin-starter-server.version>3.0.2</spring-boot-admin-starter-server.version>
+    </properties>
 
     <dependencies>
-        <!--配置迁移依赖-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-properties-migrator</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+            <version>${spring-boot-admin-starter-server.version}</version>
+        </dependency>
+        <!--还需要Web模块，这里在总的pom中就不引入了-->
     </dependencies>
 
+
+    <artifactId>spring-boot-admin-server</artifactId>
 </project>

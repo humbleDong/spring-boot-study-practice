@@ -1,0 +1,52 @@
+#management:
+#  endpoints:
+#    enabled-by-default: false
+#  endpoint:
+#    info:
+#      enabled: true
+
+
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: health,info
+    web:
+      exposure:
+        include: "*"
+        exclude: threadump
+  tracing:
+    sampling:
+      probability: 1.0
+
+
+logging:
+  pattern:
+    level: ${spring.application.name:},%X{traceId:-},%X{spanId:-}
+
+
+
+
+#management:
+#  endpoints:
+#    web:
+#      discovery:
+#        enabled: false
+
+
+#management:
+#  endpoints:
+#    web:
+#      base-path: /act
+#      path-mapping:
+#        health: hth
+#  server:
+#    port: 8088
+#    address: 127.0.0.1
+
+#management:
+#  endpoints:
+#    web:
+#      cors:
+#        allowed-origins: "https:xxxx.com"
+#        allowed-methods: "POST,GET"
