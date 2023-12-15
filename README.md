@@ -18,5 +18,5 @@
 - #### spring-boot-war                  将一个应用打成war包
 - #### spring-boot-test                 单元测试的案列
 - #### spring-boot-actuator             自定义端点(Endpoint)、指标(metrics)、observation(观测)，实现链路跟踪案例
-- #### spring-boot-admin-server         Spring Boot Admin监控的服务端(监听客户端暴露的端点信息和指标)
+- #### spring-boot-admin-server         Spring Boot Admin监控的服务端(监听客户端暴露的端点信息和指标以及监控报警)
 - #### spring-boot-admin-client         Spring Boot Admin监控的客户端(一个定时任务)
